@@ -5,6 +5,7 @@ langchain
 langchain-core
 langchain-community
 langchain_huggingface
+langchain_qdrant
 torch
 tqdm
 qdrant-client
