@@ -4,6 +4,7 @@ bs4
 langchain
 langchain-core
 langchain-community
+langchain_huggingface
 torch
 tqdm
 qdrant-client

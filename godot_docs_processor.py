@@ -14,8 +14,8 @@ class GodotDocsProcessor:
     def __init__(
         self,
         html_dir="data/raw",
-        chunk_dir="chunked",
-        processed_dir="processed",
+        chunk_dir="data/chunked",
+        processed_dir="data/processed",
         chunk_size=500,
         chunk_overlap=50,
         use_blip=True,
