@@ -1,0 +1,10 @@
+transformers 
+pillow 
+bs4
+langchain
+langchain-core
+langchain-community
+torch
+tqdm
+qdrant-client
+requests
