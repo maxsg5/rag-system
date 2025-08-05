@@ -10,3 +10,4 @@ tqdm
 qdrant-client
 requests
 sentence-transformers
+streamlit

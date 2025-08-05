@@ -5,7 +5,7 @@ from tqdm import tqdm
 from bs4 import BeautifulSoup
 from PIL import Image
 from langchain_core.documents import Document
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 from transformers import BlipProcessor, BlipForConditionalGeneration
 import torch
