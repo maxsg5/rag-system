@@ -1,4 +1,6 @@
 import streamlit as st
+st.set_page_config(page_title="Godot Docs Assistant", layout="wide")
+
 from qdrant_client import QdrantClient
 from langchain_qdrant import QdrantVectorStore
 from langchain_huggingface import HuggingFaceEmbeddings
@@ -21,7 +23,7 @@ def setup_rag_chain():
     vectorstore = QdrantVectorStore.from_existing_collection(
         url="http://localhost:6333",
         collection_name="rag_docs",
-        embeddings=embedding
+        embedding=embedding
     )
 
     retriever = vectorstore.as_retriever(search_kwargs={"k": 5})
@@ -67,7 +69,6 @@ Answer:
 rag_chain = setup_rag_chain()
 
 # -- UI
-st.set_page_config(page_title="Godot Docs Assistant", layout="wide")
 st.title("🤖 Godot Docs Assistant (RAG + Ollama)")
 
 query = st.text_input("Ask a question about Godot documentation:", placeholder="e.g. how to add a camera?")
