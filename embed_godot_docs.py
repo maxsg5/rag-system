@@ -11,7 +11,7 @@ processor = GodotDocsProcessor()
 
 # Load chunked docs
 print("📄 Loading chunked documents...")
-docs = processor.load_documents("data/chunked/chunked_docs.json")
+docs = processor.load_documents("data/chunked/chunks.json")
 print(f"✅ Loaded {len(docs)} documents")
 
 # Embed model

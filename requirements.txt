@@ -12,3 +12,5 @@ qdrant-client
 requests
 sentence-transformers
 streamlit
+tiktoken
+openai

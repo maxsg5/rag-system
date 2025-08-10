@@ -11,7 +11,7 @@ embedding = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
 
 # Connect to Qdrant
 qdrant = QdrantClient(host="localhost", port=6333)
-collection_name = "rag_docs"
+collection_name = "godot-docs"
 
 # Load retriever from Qdrant
 vectorstore = Qdrant(
