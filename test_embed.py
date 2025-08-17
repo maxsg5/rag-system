@@ -22,7 +22,7 @@ embedding_model = HuggingFaceEmbeddings(
 print("✅ Embedding model loaded.")
 
 # Connect to Qdrant
-COLLECTION_NAME = "godot-docs"
+COLLECTION_NAME = "godot-docs-2"
 qdrant = QdrantClient("http://localhost:6333")
 
 # Ensure collection exists; if already present ask user before overwriting

@@ -1,8 +1,46 @@
+# Prerequisites
+Have the following packages and tools installed:
+
+- Python 3.8 or later
+- Docker
+- Docker Compose
+
 # Steps to Reproduce
+## You have two options.
+### Option 1 (pre chunked, recommended)
+1. Create Python Virtual Environment
+```bash
+python -m venv venv
+source venv/bin/activate
+```
+
+2. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
 
 1. Start the Docker containers.
 ```bash
-docker compose up -d
+docker compose up build -d
+```
+
+### Option 2 (full pipeline)
+
+1. Create Python Virtual Environment
+```bash
+python -m venv venv
+```
+2. Activate Virtual Environment
+```bash
+source venv/bin/activate
+```
+3. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+4. Start the Docker containers.
+```bash
+docker compose up build -d
 ```
 
 # Cosine Similarity
