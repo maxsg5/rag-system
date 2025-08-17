@@ -6,6 +6,7 @@ langchain-core
 langchain-community
 langchain_huggingface
 langchain_qdrant
+langchain_ollama
 torch
 tqdm
 qdrant-client
@@ -13,4 +14,3 @@ requests
 sentence-transformers
 streamlit
 tiktoken
-openai
