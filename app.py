@@ -119,7 +119,33 @@ rag_chain = setup_rag_chain()
 
 # -- UI
 st.title("🤖 Godot Docs Assistant (RAG + Ollama)")
-st.caption(f"Using collection: {os.getenv('QDRANT_COLLECTION', 'godot-docs')} | model: {os.getenv('EMBEDDING_MODEL', 'all-MiniLM-L6-v2')}")
+st.caption(
+    f"Collection: {os.getenv('QDRANT_COLLECTION', 'godot-docs')} | Embeddings: {os.getenv('EMBEDDING_MODEL', 'all-MiniLM-L6-v2')} | Ollama: {os.getenv('OLLAMA_MODEL', 'llama3.2:1b')}"
+)
+
+with st.expander("ℹ️ How the Relevance Scoring Works"):
+    st.markdown("""
+    **Vector Similarity Search Process:**
+    
+    1. **Query Processing**: Your question is converted into a 384-dimensional vector using the `all-MiniLM-L6-v2` embedding model
+    
+    2. **Document Embeddings**: All Godot documentation chunks were pre-processed and embedded using the same model during indexing
+    
+    3. **Similarity Calculation**: Qdrant uses **cosine similarity** to compare your query vector with all document vectors:
+       - Formula: `cosine_similarity = dot(query_vector, doc_vector) / (||query_vector|| * ||doc_vector||)`
+       - This measures the angle between vectors in 384-dimensional space
+    
+    4. **Distance to Similarity**: Qdrant stores cosine distance (1 - cosine_similarity), then converts back to similarity for scoring
+    
+    5. **Score Range**: 
+       - **0.0**: No semantic similarity (perpendicular vectors)
+       - **1.0**: Perfect semantic match (identical vectors)
+       - **0.7-1.0**: High relevance (typical for good matches)
+       - **0.4-0.7**: Medium relevance (related concepts)
+       - **<0.4**: Low relevance (weakly related)
+    
+    The top 5 most similar documents are retrieved and used as context for the LLM to generate the answer.
+    """)
 
 query = st.text_input("Ask a question about Godot documentation:", placeholder="e.g. how to add a camera?")
 
@@ -134,6 +160,15 @@ if query:
 
     st.markdown("---")
     st.markdown("### 📚 Source Documents")
+    st.info("""
+    **Relevance Score Calculation:**
+    - Scores are calculated using **cosine similarity** between your query embedding and document embeddings
+    - Range: 0.0 to 1.0 (higher = more relevant)
+    - Method: Your query is converted to a 384-dimensional vector using the all-MiniLM-L6-v2 model
+    - Each document was pre-embedded using the same model during indexing
+    - Qdrant performs vector search using cosine distance to find the most semantically similar documents
+    """)
+    
     for i, doc in enumerate(sources):
         # Extract meaningful title from metadata
         title = doc.metadata.get('title', 'Unknown Title')
