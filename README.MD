@@ -32,8 +32,8 @@ The dataset used in this project contains comprehensive information from the off
 - **Best Practices**: Recommended approaches and patterns for game development
 
 **Processing Pipeline**:
-1. **Download**: Official Godot documentation is downloaded from the nightly builds (HTML format)
-2. **Extraction**: Documentation is extracted and converted from rst.txt files to structured text
+1. **Download**: Official Godot documentation is downloaded from the nightly builds
+2. **Extraction**: Documentation is extracted and converted from .rst.txt files to structured text
 3. **Chunking**: Large documents are intelligently split into smaller, semantically meaningful chunks
 4. **Embedding**: Each chunk is converted into 384-dimensional vectors using the all-MiniLM-L6-v2 model
 5. **Storage**: Vectors and metadata are stored in Qdrant vector database for fast semantic search
@@ -53,6 +53,11 @@ Have the following packages and tools installed:
 - Python 3.12 or later
 - Docker
 - Docker Compose
+
+optional but recommended
+
+- 32GB+ RAM
+- NVIDIA GPU (for faster embedding computation, and LLM otherwise CPU will be used)
 
 # How to run
 ## You have two options.
@@ -177,3 +182,10 @@ If the dashboard doesn't appear automatically:
 
 
 
+# Future Considerations
+- Compare different LLM models (e.g. Llama 2, Falcon, Mistral)
+- Compare different chunking methods (e.g. overlapping chunks, hierarchical chunking)
+- Compare different databases (e.g. Pinecone, Weaviate, Milvus)
+- Compare different retrieval techniques (e.g. Maximal Marginal Relevance)
+- Explore additional data sources for improving knowledge base (e.g. Wikipedia, GitHub, Stack Overflow)
+- Use user feedback for continuous improvement and fine-tuning.
