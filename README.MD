@@ -205,3 +205,4 @@ If the dashboard doesn't appear automatically:
 - Compare different retrieval techniques (e.g. Maximal Marginal Relevance)
 - Explore additional data sources for improving knowledge base (e.g. Wikipedia, GitHub, Stack Overflow)
 - Use user feedback for continuous improvement and fine-tuning.
+- Deploy on cloud platforms for scalability and availability.
