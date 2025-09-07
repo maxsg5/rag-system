@@ -156,7 +156,6 @@ The LLM (Large Language Model) is used as a judge to evaluate the quality of the
 ### **Data Processing**
 - **`requests`**: HTTP client for downloading documentation
 - **`bs4` (BeautifulSoup)**: parsing and web scraping
-- **`pillow`**: Image processing support (note: future enhancement, not implemented in the pipeline)
 - **`tqdm`**: Progress bars for data processing
 
 ## Monitoring & Metrics Stack
