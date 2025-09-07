@@ -46,6 +46,12 @@ You can find the processed data in `data/chunked/chunks.json` and the raw docume
 # Project Demo Video
 https://www.youtube.com/embed/-F6iT-kqeKw?si=ReaCcVhH0xVhkLIo
 
+# Screenshots
+![Screenshot 1](images/Screenshot%202025-09-07%20181037.png)
+![Screenshot 2](images/Screenshot%202025-09-07%20181210.png)
+![Screenshot 3](images/Screenshot%202025-09-07%20181240.png)
+![Screenshot 4](images/Screenshot%202025-09-07%20181324.png)
+
 
 # Prerequisites
 Have the following packages and tools installed:
