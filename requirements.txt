@@ -14,3 +14,8 @@ requests
 sentence-transformers
 streamlit
 tiktoken
+rank-bm25
+numpy
+prometheus-client
+fastapi
+uvicorn

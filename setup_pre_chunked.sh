@@ -41,7 +41,7 @@ fi
 echo "✅ Ollama container is running"
 
 # Download model 
-echo "📥 Downloading llama3.2:1b model (this may take a few minutes)..."
+echo "📥 Downloading llama3.2:1b model (this may take a while)..."
 docker exec -it ollama ollama pull llama3.2:1b
 
 #embed godot docs
