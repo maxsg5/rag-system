@@ -66,18 +66,23 @@ optional but recommended
 - NVIDIA GPU (for faster embedding computation, and LLM otherwise CPU will be used)
 
 # How to run
-## You have two options.
 
-### Option 1 (*pre-chunked*, saves you more time, uses dataset that was pre-chunked on 8/17/2025) - recommended
+Choose one of the setup options below to get started. Both scripts will automatically configure Docker containers for the LLM, Qdrant database, and monitoring stack, as well as populate the vector database with embedded chunked documentation data.
 
-Run
+**Prerequisites:** Ensure Docker is running before executing these commands.
+
+### Option 1: Pre-chunked Dataset (Recommended)
+
+Uses pre-processed dataset from 8/17/2025 for faster setup. Choose this option for quick deployment with stable documentation.
+
 ```bash
 ./setup_pre_chunked.sh
 ```
 
-### Option 2 (*from scratch*, downloads latest docs and chunks the data)
+### Option 2: From Scratch
 
-Run
+Downloads and processes the latest Godot documentation, then embeds it into the vector database. Only use this option if you specifically need the most current Godot documentation.
+
 ```bash
 ./setup_scratch.sh
 ```
