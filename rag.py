@@ -19,7 +19,16 @@ vectorstore = Qdrant(
     collection_name=collection_name,
     embeddings=embedding
 )
-retriever = vectorstore.as_retriever(search_type="mmr", search_kwargs={"k": 5, "filter": None})
+# Optimized MMR retriever with aggressive diversity parameters (based on evaluation)
+retriever = vectorstore.as_retriever(
+    search_type="mmr", 
+    search_kwargs={
+        "k": 5,
+        "fetch_k": 20,  # Get 4x more candidates for better MMR selection
+        "lambda_mult": 0.3,  # Aggressive diversity (lower = more diverse)
+        "filter": None
+    }
+)
 
 # Setup Ollama LLM
 llm = ChatOllama(

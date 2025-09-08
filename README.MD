@@ -97,6 +97,10 @@ optional but recommended
 
 # Retrieval Evaluation
 
+📊 **[View Complete Retrieval Evaluation Analysis →](RETRIEVAL_EVALUATION.md)**
+
+**Summary:** After comprehensive testing of multiple retrieval methods against our actual Qdrant database, **Aggressive MMR** emerged as the optimal approach, providing the best balance of relevance, diversity, and performance. The system has been updated with optimized MMR parameters for improved results.
+
 
 
 
